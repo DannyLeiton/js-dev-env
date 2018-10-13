@@ -2,7 +2,15 @@
 		"name": "javascript-development-environment",
 		"version": "1.0.0",
 		"description": "JavaScript development environment Starter Kit",
-		"scripts": {},
+		"scripts": {
+			"prestart": "node buildScripts/startMessage.js",
+			"start": "npm-run-all --parallel security-check open:src",
+			"open:src": "node buildScripts/srcServer.js",
+			"security-check": "nsp check",
+			"preshare": "node buildScripts/shareMessage.js",
+			"share": "npm-run-all --parallel open:src localtunnel",
+			"localtunnel": "lt --port 3000 --subdomain bretico"
+		},
 		"author": "Daniel Leiton",
 		"license": "MIT",
 		"dependencies": {
