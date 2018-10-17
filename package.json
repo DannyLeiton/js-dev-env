@@ -4,12 +4,14 @@
 		"description": "JavaScript development environment Starter Kit",
 		"scripts": {
 				"prestart": "babel-node buildScripts/startMessage.js",
-				"start": "npm-run-all --parallel security-check open:src",
+				"start": "npm-run-all --parallel security-check open:src lint:watch",
 				"open:src": "babel-node buildScripts/srcServer.js",
 				"security-check": "nsp check",
 				"preshare": "node buildScripts/shareMessage.js",
 				"share": "npm-run-all --parallel open:src localtunnel",
-				"localtunnel": "lt --port 3000 --subdomain bretico"
+				"localtunnel": "lt --port 3000 --subdomain bretico",
+				"lint": "esw webpack.config.*  src  buildScripts --color",
+				"lint:watch": "npm run lint -- --watch"
 		},
 		"author": "Daniel Leiton",
 		"license": "MIT",
