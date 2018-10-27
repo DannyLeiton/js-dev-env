@@ -13,8 +13,8 @@ describe('index.html', () => {
 		const index = fs.readFileSync('./src/index.html', "utf-8");
 		jsdom.env(index, function(err, window) { // It is asynchronous because it has a callback here.
 			const h1 = window.document.getElementsByTagName('h1')[0];
-			console.log(h1.innerHTML);
-			expect(h1.innerHTML).to.equal('Hello World!');//equal('Bienvenido a Bretico!');
+			// console.log(h1.innerHTML);
+			expect(h1.innerHTML).to.equal('Bienvenido a Bretico!');//equal('Hello World!');
 			done(); // Needed for asynchronous tests, so mocha will know it is ready to be evaluated.
 			window.close();
 		});
