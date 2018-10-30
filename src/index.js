@@ -8,6 +8,8 @@ console.log(`Pagaría ${serviceValue} por ese servicio.`); // eslint-disable-lin
 
 // Populate table of users via API call.
 getUsers().then(result => {
+	console.log('result', result); // eslint-disable-line no-console
+
 	let usersBody = "";
 
 	result.forEach(user => {
@@ -35,4 +37,4 @@ getUsers().then(result => {
 			row.parentNode.removeChild(row);
 		};
 	});
-});
+}).catch((err) => console.log('Data was not ready! ', err)); // eslint-disable-line no-console
