@@ -7,8 +7,21 @@ export function getUsers() {
 	return get('users');
 }
 
+export function deleteUser(id) {
+	return del('users/'+id);
+}
+
 function get(uri) {
 	return fetch(baseUrl + uri).then(onSuccess, onError);
+}
+
+// Can't call this function 'delete', since it is a reserved word in JS.
+function del(uri) {
+	const request = new Request(baseUrl + uri, {
+		method: 'DELETE'
+	});
+
+	return fetch(request).then(onSuccess, onError);
 }
 
 function onSuccess(res) {
@@ -16,5 +29,5 @@ function onSuccess(res) {
 }
 
 function onError(err) {
-	console.log(err); // eslint-disable-line no-console
+	console.log('Error: ', err); // eslint-disable-line no-console
 }
