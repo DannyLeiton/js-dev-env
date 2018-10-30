@@ -28,6 +28,34 @@ app.get('/users', (req, res) => {
 	]);
 });
 
+// To generate fake data: https://cdn.rawgit.com/Marak/faker.js/master/examples/browser/index.html
+/* json-schema-faker.js.org
+{
+  "type": "array",
+  "items": [
+    {
+    "type": "integer"
+    },
+    {
+    "type": "boolean"
+    },
+    {
+    "type": "string"
+    }
+  ]
+}
+
+{
+  "type": "array",
+  "minItems": 100,
+  "maxItems": 200,
+  "items":
+    {
+    "type": "integer"
+    }
+}
+*/
+
 app.listen(port, function(err) {
 	if(err) {
 		console.log(err);
