@@ -3,6 +3,7 @@ import path from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 
 export default {
+	mode: 'development',
 	resolve: {
 		extensions: ['*', '.js', '.jsx', '.json']
 	},
@@ -30,7 +31,7 @@ export default {
 	],
 	module: {
 		rules: [
-			{test: /\.js$/, exclude: /node_modules/, loader: ['babel-loader']},
+			{test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader']},
 			{test: /\.css$/, loader: ['style-loader','css-loader']}
 		]
 	}

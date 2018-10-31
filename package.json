@@ -4,9 +4,8 @@
 		"description": "JavaScript development environment Starter Kit",
 		"scripts": {
 				"prestart": "babel-node buildScripts/startMessage.js",
-				"start": "npm-run-all --parallel security-check open:src lint:watch test:watch start-mock-api",
+				"start": "npm-run-all --parallel open:src lint:watch test:watch start-mock-api",
 				"open:src": "babel-node buildScripts/srcServer.js",
-				"security-check": "nsp check",
 				"preshare": "node buildScripts/shareMessage.js",
 				"share": "npm-run-all --parallel open:src localtunnel",
 				"localtunnel": "lt --port 3000 --subdomain bretico",
