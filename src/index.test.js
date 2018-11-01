@@ -27,7 +27,7 @@ describe('index.html', () => {
 		jsdom.env(index, function(err, window) { // It is asynchronous because it has a callback here.
 			const h2 = window.document.getElementsByTagName('h2')[0];
 			// console.log(h1.innerHTML);
-			expect(h2.innerHTML).to.equal('This is are our Users so far:');//equal('Hello World!');
+			expect(h2.innerHTML).to.equal('This are our Users so far:');//equal('Hello World!');
 			done(); // Needed for asynchronous tests, so mocha will know it is ready to be evaluated.
 			window.close();
 		});
