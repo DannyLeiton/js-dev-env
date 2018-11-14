@@ -1,5 +1,5 @@
 export default function getBaseUrl() {
-	return getQueryStringParameterByName('useMockApi') ? 'http://localhost:3001/' : 'https://ghastly-hollow-70730.herokuapp.com/';
+	return getQueryStringParameterByName('useMockApi') ? 'http://localhost:3001/' : 'https://bretico-api.azurewebsites.net/api/';
 }
 
 function getQueryStringParameterByName(name, url) {

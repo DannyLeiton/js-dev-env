@@ -20,7 +20,7 @@
 		"prebuild": "npm-run-all clean-dist test lint",
 		"build": "babel-node buildScripts/build.js",
 		"post-build": "babel-node buildScripts/distServer.js",
-		"deploy": "surge ./dist"
+		"deploy": "surge ./dist bretico.com"
 	},
 	"author": "Daniel Leiton",
 	"license": "MIT",
